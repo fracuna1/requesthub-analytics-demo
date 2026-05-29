@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>RequestHub Demo Landing Page</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      color: #1f2937;
+      background: #f4f6fa;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 72px auto;
+      padding: 24px;
+    }
+
+    .hero {
+      padding: 40px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 38px;
+      color: #111827;
+    }
+
+    p {
+      max-width: 680px;
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .cta-group {
+      margin-top: 28px;
+    }
+
+    button {
+      padding: 13px 20px;
+      margin-right: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #signup-button {
+      color: #ffffff;
+      background: #2563eb;
+    }
+
+    #demo-button {
+      color: #111827;
+      background: #e5e7eb;
+    }
+
+    .helper-text {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>RequestHub</h1>
+
+      <p>
+        RequestHub helps small teams organize incoming requests, track follow-ups,
+        and keep work moving without losing important details.
+      </p>
+
+      <div class="cta-group">
+        <button id="signup-button">Sign Up</button>
+        <button id="demo-button">Request Demo</button>
+      </div>
+
+      <p class="helper-text">
+        Demo landing page created specifically for an analytics tracking assessment.
+      </p>
+    </section>
+  </main>
+
+  <!-- To-do: AMPLITUDE SNIPPET -->
+
+  <script>
+    amplitude.track("landing_page_viewed");
+
+    document.getElementById("signup-button").addEventListener("click", function () {
+      amplitude.track("signup_cta_clicked");
+    });
+
+    document.getElementById("demo-button").addEventListener("click", function () {
+      amplitude.track("request_demo_cta_clicked");
+    });
+  </script>
+</body>
+</html>
